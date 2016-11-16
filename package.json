@@ -1,0 +1,30 @@
+{
+  "name": "project_1",
+  "version": "1.0.0",
+  "description": "Project 1 -- full stack web application ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangerstephen/Project-1.git"
+  },
+  "keywords": [
+    "Project_1",
+    "Thought",
+    "Thoughtful"
+  ],
+  "author": "Stephen Dangerfield & Star Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dangerstephen/Project-1/issues"
+  },
+  "homepage": "https://github.com/dangerstephen/Project-1#readme"
+}
