@@ -1,4 +1,26 @@
-body{
-  background-color: #FFEFE5;
-  color: #1FC8A9
+body {
+    color: #1FC8A9;
+    font-family: 'Rubik', sans-serif;
+    background: url("../images/balloons.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+  display: inline;
+}
+
+.nav-wrapper {
+  padding: 0 80px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
