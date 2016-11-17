@@ -1,48 +1,23 @@
 body {
-    background-color: #FFEFE5;
     color: #1FC8A9;
     font-family: 'Roboto', sans-serif;
-}
-
-.home-image {
-    width: 100%;
-    height: 600px;
-    background-image: url("../images/bw-room.jpeg");
-    background-position: center;
+    background: url("../images/balloons.jpeg") no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
-h5 {
-    color: black;
-    font-size: 15px;
-    font-weight: 200;
+nav {
+  display: inline;
 }
 
-.nav-text {
-    font-size: 18px;
-}
 
-a:hover {
-    text-decoration: none;
-    color: #FFEFE5;
-}
-
-.section {
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
-
-.footer-text {
-    color: white;
-}
-
-.page-footer {
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
     text-align: center;
-    height: 60px;
     color: white;
-}
-
-footer a:hover {
-    color: #FFEFE5;
-    text-decoration: none;
 }
