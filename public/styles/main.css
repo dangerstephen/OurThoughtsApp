@@ -1,6 +1,9 @@
+
+
 body {
     background-color: #FFEFE5;
     color: #1FC8A9;
+    font-family: 'Cabin', sans-serif;
 }
 
 .home-image {
@@ -11,12 +14,27 @@ body {
     background-size: cover;
 }
 
-footer {
+h5 {
+  color: black;
+  font-size: 15px;
+}
+
+.section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.footer-text {
+  color: white;
+}
+
+.page-footer {
     text-align: center;
     height: 60px;
     color: white;
 }
 
-.footer-names {
-    font-size: 16px;
+footer a:hover {
+  color: #FFEFE5;
+  text-decoration: none;
 }
