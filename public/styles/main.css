@@ -1,5 +1,3 @@
-
-
 body {
     background-color: #FFEFE5;
     color: #1FC8A9;
@@ -15,8 +13,17 @@ body {
 }
 
 h5 {
-  color: black;
-  font-size: 15px;
+    color: black;
+    font-size: 15px;
+}
+
+.nav-text {
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FFEFE5;
 }
 
 .section {
@@ -25,7 +32,7 @@ h5 {
 }
 
 .footer-text {
-  color: white;
+    color: white;
 }
 
 .page-footer {
@@ -35,6 +42,6 @@ h5 {
 }
 
 footer a:hover {
-  color: #FFEFE5;
-  text-decoration: none;
+    color: #FFEFE5;
+    text-decoration: none;
 }
