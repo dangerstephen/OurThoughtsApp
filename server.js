@@ -4,13 +4,22 @@
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  mongoose = require('mongoose');
+  mongoose = require('mongoose'),
+  session = require('express-session');;
 
 // middleware
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect('mongodb://localhost/simple-login');
+
+//middleware for session
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: 'SuperSecretCookie',
+  cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
+}));
 
 
 var User = require('./models/user');
@@ -23,8 +32,24 @@ app.get('/signup', function (req, res) {
 
 // login route with placeholder response
 app.get('/login', function (req, res) {
-  res.send('login coming soon');
+  res.render('login');
 });
+
+app.post('/sessions', function (req, res) {
+  // call authenticate function to check if password user entered is correct
+  User.authenticate(req.body.email, req.body.password, req.body.phoneNumber, function (err, user) {
+    req.session.userId = user._id;
+    res.redirect('/profile');
+  });
+});
+
+//shows user profile page
+app.get('/profile', function (req, res) {
+  // find the user currently logged in
+  User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    res.render('profile.ejs', {user: currentUser})
+  });
+}); 
 
 
 // A create user route - creates a new user with a secure password
@@ -34,6 +59,8 @@ app.post('/users', function (req, res) {
     res.json(user);
   });
 });
+
+
 
 
 // listen on port 3000
