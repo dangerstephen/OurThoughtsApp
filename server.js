@@ -24,9 +24,10 @@ app.use(session({
 
 var User = require('./models/user');
 
-// //link to index.html??
-// app.get('/', function (req, res) {
-// res.sendFile(__dirname + '/views/index.html');});
+//link to index.html??
+app.get('/', function (req, res) {
+res.sendFile(__dirname + '/views/index.html');
+});
 
 // signup route (renders signup view)
 app.get('/signup', function (req, res) {
@@ -82,7 +83,7 @@ app.use('/', function (req, res, next) {
           req.user = user;
           callback(null, user);
         }
-      }); 
+      });
     };
 
     next();
