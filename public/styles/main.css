@@ -1,16 +1,27 @@
 body {
     color: white;
-    font-family: 'Rubik', sans-serif;
-    background: url("../images/balloons.jpeg") no-repeat center center fixed;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url("../images/balloons.jpeg") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
+
 }
 
 nav {
   display: inline;
 }
+li {
+  margin-top: 20px;
+}
+.brand-logo {
+  font-family: 'Londrina Outline', cursive;
 
+}
 .nav-wrapper {
   padding: 0 80px;
 }
@@ -26,6 +37,7 @@ footer {
 }
 input{
   text-align: center;
+  display: inline;
 }
 
 /* These make it so the input form text is white for all browsers*/
@@ -44,3 +56,23 @@ color: white !important;
 input:-ms-input-placeholder {/* Internet Exploer- */
 color: white !important;
 }
+
+div .row {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px auto 0px auto;
+  border: 4px solid white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 550px;
+  height: 450px;
+}
+
+.material-icons {
+  float: left;
+}
+/*.form-control {
+  display: inline;
+}*/
