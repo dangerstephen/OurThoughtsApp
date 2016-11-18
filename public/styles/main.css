@@ -1,5 +1,5 @@
 body {
-    color: #1FC8A9;
+    color: white;
     font-family: 'Rubik', sans-serif;
     background: url("../images/balloons.jpeg") no-repeat center center fixed;
     background-size: cover;
@@ -23,4 +23,24 @@ footer {
     width: 100%;
     text-align: center;
     color: white;
+}
+input{
+  text-align: center;
+}
+
+/* These make it so the input form text is white for all browsers*/
+input::-webkit-input-placeholder { /* Google Chrome- */
+color: white !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;
+}
+
+input:-ms-input-placeholder {/* Internet Exploer- */
+color: white !important;
 }
