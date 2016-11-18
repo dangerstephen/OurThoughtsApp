@@ -24,6 +24,9 @@ app.use(session({
 
 var User = require('./models/user');
 
+// //link to index.html??
+// app.get('/', function (req, res) {
+// res.sendFile(__dirname + '/views/index.html');});
 
 // signup route (renders signup view)
 app.get('/signup', function (req, res) {
@@ -49,7 +52,7 @@ app.get('/profile', function (req, res) {
   User.findOne({_id: req.session.userId}, function (err, currentUser) {
     res.render('profile.ejs', {user: currentUser})
   });
-}); 
+});
 
 
 // A create user route - creates a new user with a secure password
@@ -60,6 +63,30 @@ app.post('/users', function (req, res) {
   });
 });
 
+//route to log out of account
+app.get('/logout', function (req, res) {
+  // remove the session user id
+  req.session.userId = null;
+  // redirect to login (for now)
+  req.user = null;
+  res.redirect('/login');
+});
+
+
+app.use('/', function (req, res, next) {
+    req.currentUser = function (callback) {
+      User.findOne({_id: req.session.userId}, function (err, user) {
+        if (!user) {
+          callback("No User Found", null)
+        } else {
+          req.user = user;
+          callback(null, user);
+        }
+      }); 
+    };
+
+    next();
+  });
 
 
 
