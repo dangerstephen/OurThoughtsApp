@@ -1,4 +1,5 @@
 // server.js
+var db = require('./models')
 
 // require express framework and additional modules
 var express = require('express'),
@@ -11,7 +12,7 @@ var express = require('express'),
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect('mongodb://localhost/simple-login');
+// mongoose.connect('mongodb://localhost/simple-login');
 
 //middleware for session
 app.use(session({
@@ -20,6 +21,30 @@ app.use(session({
   secret: 'SuperSecretCookie',
   cookie: { maxAge: 30 * 60 * 1000 } // 30 minute cookie lifespan (in milliseconds)
 }));
+
+
+// //DATA TO test
+// var thoughts= [
+//   {
+//     description: "youre great dont forget that"
+//     category: "happy"
+//   }, {
+//     description: "you need some major work."
+//     category: "sad"
+//   },
+//   {
+//     description: "im hungry"
+//     category: "weird"
+//   },
+//   {
+//     description: "knock knock"
+//     category: "funny"
+//   },
+//
+// ];
+
+
+
 
 
 var User = require('./models/user');
@@ -94,6 +119,46 @@ app.use('/', function (req, res, next) {
     next();
   });
 
+
+
+//Routes for thoughts
+// get all thooughts
+app.get('/api/thoughts', function (req, res) {
+  // send all thoughts as JSON
+  db.Thought.find(function(err, thoughts){
+    if (err) { return console.log("index error: " + err); }
+    res.json(thoughts);
+  });
+});
+
+// get one thought
+app.get('/api/thoughts/:id', function (req, res) {
+  db.Thoughts.findOne({_id: req.params._id }, function(err, data) {
+    res.json(data);
+  });
+});
+
+// create new thought
+app.post('/api/thoughts', function (req, res) {
+  // create new thought with form data (`req.body`)
+  console.log('thoughts create', req.body);
+  var newThought = new db.Thought(req.body);
+  newThought.save(function handleDBThoughtSaved(err, savedThought) {
+    res.json(savedThought);
+  });
+});
+
+
+// delete thought
+app.delete('/api/thought/:id', function (req, res) {
+  // get thought id from url params (`req.params`)
+  console.log('thoughts delete', req.params);
+  var thoughtId = req.params.id;
+  // find the index of the thought we want to remove
+  db.Thought.findOneAndRemove({ _id: thoughtId }, function (err, deletedThought) {
+    res.json(deletedThought);
+  });
+});
 
 
 // listen on port 3000
