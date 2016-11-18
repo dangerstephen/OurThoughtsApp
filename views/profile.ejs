@@ -30,25 +30,58 @@
 <script src="./scripts/app.js"></script>
 
 </head>
+
 <body>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1>Profile</h1>
-  <hr>
-  <h2>Welcome! You're logged in as <%= user.email %>.</h2>
-  <a id="logout" href="/logout" class="btn btn-default">Log Out</a>
-      </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Welcome!</h2>
+                <h3><%= user.email %>.</h3>
+                <a id="logout" href="/logout" class="btn btn-default">Log Out</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <footer class="footer-container">
-    <div class="footer-text">
-    Created By <a href="https://www.linkedin.com/in/myungok-starkim" target="_blank">Star</a> & <a href="https://www.linkedin.com/in/stephen-dangerfield-a46372128" target="_blank">Stephen</a>
-  </div>
-  </footer>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Add a new thought</h3>
+                <hr>
+                <form id="newThought-form">
+                    <div class="form-group">
+                        <input type="message" name="thought" class="form-control" placeholder="Enter Your Thought" autofocus>
+                    </div>
+                    <div class="form-group">
+                      <h5> Select a Category</h5>
+                      <input class="with-gap" name="category" type="radio" id="test1"  />
+                      <label for="test1">Happy</label>
+
+                      <input class="with-gap" name="category" type="radio" id="test2"  />
+                      <label for="test2">Funny</label>
+
+                      <input class="with-gap" name="category" type="radio" id="test3"  />
+                      <label for="test3">Weird</label>
+
+                      <input class="with-gap" name="category" type="radio" id="test4"  />
+                      <label for="test4">Sad</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add thought to Colelction" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <div class="footer-text">
+            Created By <a href="https://www.linkedin.com/in/myungok-starkim" target="_blank">Star</a> & <a href="https://www.linkedin.com/in/stephen-dangerfield-a46372128" target="_blank">Stephen</a>
+        </div>
+    </footer>
 
     <!--  Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 </body>
+
 </html>
