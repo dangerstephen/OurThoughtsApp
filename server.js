@@ -13,15 +13,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect('mongodb://localhost/simple-login');
 
 
-// signup route with placeholder response
+// signup route (renders signup view)
 app.get('/signup', function (req, res) {
-  res.send('signup coming soon');
+  res.render('signup');
 });
 
 // login route with placeholder response
 app.get('/login', function (req, res) {
   res.send('login coming soon');
 });
+
+
+// A create user route - creates a new user with a secure password
+app.post('/users', function (req, res) {
+  console.log('request body: ', req.body);
+  res.json("it worked!");
+});
+
 
 // listen on port 3000
 app.listen(3000, function () {
