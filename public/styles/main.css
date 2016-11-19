@@ -2,28 +2,26 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ), url("../images/balloons.jpeg") no-repeat center center fixed;
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/balloons.jpeg") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
-
 }
 
 nav {
-  display: inline;
+    display: inline;
 }
-li {
-  margin-top: 20px;
-}
-.brand-logo {
-  font-family: 'Londrina Outline', cursive;
 
+li {
+    margin-top: 20px;
 }
+
+.brand-logo {
+    font-family: 'Londrina Outline', cursive;
+}
+
 .nav-wrapper {
-  padding: 0 80px;
+    padding: 0 80px;
 }
 
 footer {
@@ -35,44 +33,53 @@ footer {
     text-align: center;
     color: white;
 }
-input{
-  text-align: center;
-  display: inline;
+
+input {
+    text-align: center;
+    display: inline;
 }
+
 
 /* These make it so the input form text is white for all browsers*/
-input::-webkit-input-placeholder { /* Google Chrome- */
-color: white !important;
+
+input::-webkit-input-placeholder {
+    /* Google Chrome- */
+    color: white !important;
 }
 
-input:-moz-placeholder { /* Firefox 18- */
-color: white !important;
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: white !important;
 }
 
-input::-moz-placeholder {  /* Firefox 19+ */
-color: white !important;
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white !important;
 }
 
-input:-ms-input-placeholder {/* Internet Exploer- */
-color: white !important;
+input:-ms-input-placeholder {
+    /* Internet Exploer- */
+    color: white !important;
 }
 
 div .row {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0px auto 0px auto;
-  border: 4px solid white;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 550px;
-  height: 450px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px auto 0px auto;
+    border: 4px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 550px;
+    height: 450px;
 }
 
 .material-icons {
-  float: left;
+    float: left;
 }
+
+
 /*.form-control {
   display: inline;
 }*/
