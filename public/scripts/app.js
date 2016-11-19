@@ -18,28 +18,29 @@ $(document).ready(function() {
         error: handleError
     });
 
-    // $('#newThought-form').on('submit', function(e) {
-    //   e.preventDefault();
-    //   $.ajax({
-    //     method: 'POST',
-    //     url: '/api/thoughts',
-    //     data: $(this).serialize(),
-    //     success: newThoughtSuccess,
-    //     error: newThoughtError
-    //   });
-    // });
+    $('#newThought-form').on('submit', function(e) {
+      e.preventDefault();
+      $.ajax({
+        method: 'POST',
+        url: '/api/thoughts',
+        data: $(this).serialize(),
+        success: newThoughtSuccess,
+        error: newThoughtError
+      });
+    });
 
-    //   $thoughtsList.on('click', '.deleteBtn', function() {
-    //     console.log('clicked delete button to', '/api/thoughts/'+$(this).attr('data-id'));
-    //     $.ajax({
-    //       method: 'DELETE',
-    //       url: '/api/thoughts/'+$(this).attr('data-id'),
-    //       success: deleteThoughtSuccess,
-    //       error: deleteThoughtError
-    //     });
-    //   });
-    //
-    //
+      $thoughtsList.on('click', '.deleteBtn', function() {
+        console.log('clicked delete button to', '/api/thoughts/'+$(this).attr('data-id'));
+
+        $.ajax({
+          method: 'DELETE',
+          url: '/api/thoughts/'+$(this).attr('data-id'),
+          success: deleteThoughtSuccess,
+          error: deleteThoughtError
+        });
+      });
+
+
 
     // helper function to render all posts to view
     // note: we empty and re-render the collection each time our post data changes
@@ -78,9 +79,8 @@ $(document).ready(function() {
 
     function deleteThoughtSuccess(json) {
         var thought = json;
-        console.log(json);
+        console.log('this is the delete json', json);
         var thoughtId = thought._id;
-        console.log('delete thought', thoughtId);
         // find the thought with the correct ID and remove it from our allThoughts array
         for (var index = 0; index < allThoughts.length; index++) {
             if (allThoughts[index]._id === thoughtId) {
@@ -89,10 +89,10 @@ $(document).ready(function() {
             }
         }
         render();
-    }
+  }
 
-    function deleteThoughtError() {
-        console.log('deletethought error!');
+    function deleteThoughtError(err) {
+        console.log('deleteThought error!', err);
     }
 
 
