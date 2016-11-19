@@ -33,15 +33,17 @@
 
 <body>
 
-  <nav class="N/A transparent z-depth-0">
-      <div class="nav-wrapper">
-          <a href="/" class="brand-logo"><h3><b>Our Thoughts</b></h3></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li>Welcome! <%= user.email %></li>
-              <li><a id="logout" href="/logout" class="btn btn-default">Log Out</a></li>
-          </ul>
-      </div>
-  </nav>
+    <nav class="N/A transparent z-depth-0">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><h3><b>Our Thoughts</b></h3></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>Welcome!
+                    <%= user.email %>
+                </li>
+                <li><a id="logout" href="/logout" class="btn btn-default">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
 
@@ -56,18 +58,18 @@
                         <input type="message" name="thought" class="form-control" placeholder="Enter Your Thought" autofocus>
                     </div>
                     <div class="form-group">
-                      <h5> Select a Category</h5>
-                      <input class="with-gap" name="category" type="radio" id="test1"  />
-                      <label for="test1">Happy</label>
+                        <h5> Select a Category</h5>
+                        <input class="with-gap" name="category" type="radio" id="test1" />
+                        <label for="test1">Happy</label>
 
-                      <input class="with-gap" name="category" type="radio" id="test2"  />
-                      <label for="test2">Funny</label>
+                        <input class="with-gap" name="category" type="radio" id="test2" />
+                        <label for="test2">Funny</label>
 
-                      <input class="with-gap" name="category" type="radio" id="test3"  />
-                      <label for="test3">Weird</label>
+                        <input class="with-gap" name="category" type="radio" id="test3" />
+                        <label for="test3">Weird</label>
 
-                      <input class="with-gap" name="category" type="radio" id="test4"  />
-                      <label for="test4">Sad</label>
+                        <input class="with-gap" name="category" type="radio" id="test4" />
+                        <label for="test4">Sad</label>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Add thought to Colelction" class="btn btn-primary">
@@ -76,7 +78,18 @@
             </div>
         </div>
     </div>
-
+    <div id="thoughtTarget">
+        <!-- handlebar template -->
+        <script id="thoughts-template" type="text/x-handlebars-template">
+            {{#each thoughts}}
+            <hr>
+            <p>
+                <b>{{description}}</b> by {{user}}
+                <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+            </p>
+            {{/each}}
+        </script>
+    </div>
     <footer class="footer-container">
         <div class="footer-text">
             Created By <a href="https://www.linkedin.com/in/myungok-starkim" target="_blank">Star</a> & <a href="https://www.linkedin.com/in/stephen-dangerfield-a46372128" target="_blank">Stephen</a>
