@@ -55,7 +55,7 @@
                 <hr>
                 <form id="newThought-form">
                     <div class="form-group">
-                        <input type="message" name="thought" class="form-control" placeholder="Enter Your Thought" autofocus>
+                        <input type="message" name="description" class="form-control" placeholder="Enter Your Thought" autofocus>
                     </div>
                     <div class="form-group">
                         <h5> Select a Category</h5>
@@ -84,8 +84,13 @@
             {{#each thoughts}}
             <hr>
             <p>
-                <b>{{thought}}</b> by {{category}}
+                <b>{{description}}</b> <br>
+                Category: {{category}}
+
                 <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+
+                <button type="button" name="button" class="UpdateBtn btn btn-warning pull-right" data-id={{_id}}>Update</button>
+
             </p>
             {{/each}}
         </script>
