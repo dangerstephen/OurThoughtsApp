@@ -163,7 +163,7 @@ app.post('/api/thoughts', function(req, res) {
 
 
 // delete thought
-app.delete('/api/thought/:id', function(req, res) {
+app.delete('/api/thoughts/:id', function(req, res) {
     // get thought id from url params (`req.params`)
     console.log('thoughts delete', req.params);
     var thoughtId = req.params.id;
