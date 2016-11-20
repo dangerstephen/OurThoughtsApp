@@ -54,25 +54,23 @@
                 <h3>Add a new thought</h3>
                 <hr>
                 <form id="newThought-form">
-                    <div class="form-group">
-                        <input type="message" name="description" class="form-control" placeholder="Enter Your Thought" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <h5> Select a Category</h5>
-                        <input class="with-gap" name="category" type="radio" id="test1" />
-                        <label for="test1">Happy</label>
+                      <div class="form-group">
+                        <input type ="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus>
+                      </div>
 
-                        <input class="with-gap" name="category" type="radio" id="test2" />
-                        <label for="test2">Funny</label>
+<div class="form-group">
+  <label for="exampleSelect1">Select Category</label>
+  <select  name="category" class="form-control" id="exampleSelect1">
+    <option value="happy">Happy</option>
+    <option value="weird">Weird</option>
+    <option value="sad">Sad</option>
+    <option value="funny">Funny</option>
+  </select>
+</div>
 
-                        <input class="with-gap" name="category" type="radio" id="test3" />
-                        <label for="test3">Weird</label>
 
-                        <input class="with-gap" name="category" type="radio" id="test4" />
-                        <label for="test4">Sad</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Add thought to Colelction" class="btn btn-primary">
+
+<button type="submit" class="btn btn-primary">Add to collection</button>
                     </div>
                 </form>
             </div>
