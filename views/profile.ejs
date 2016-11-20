@@ -45,18 +45,32 @@
         </div>
     </nav>
 
+
+
+
     <div class="container text-center">
-        <div class="thought-row">
-            <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
                 <h3>Add a new thought</h3>
                 <hr>
                 <form id="newThought-form">
-                    <div class="form-group">
-                        <input type="message" name="description" class="form-control" placeholder="Enter Your Thought" autofocus>
-                    </div>
+                      <div class="form-group">
+                        <input type ="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus>
+                      </div>
 
-                    <div class="form-group">
-                        <input type="submit" value="Add thought to Collection" class="btn btn-primary">
+<div class="form-group">
+  <label for="exampleSelect1">Select Category</label>
+  <select  name="category" class="form-control" id="exampleSelect1">
+    <option value="happy">Happy</option>
+    <option value="weird">Weird</option>
+    <option value="sad">Sad</option>
+    <option value="funny">Funny</option>
+  </select>
+</div>
+
+
+
+<button type="submit" class="btn btn-primary">Add to collection</button>
                     </div>
                 </form>
             </div>
@@ -73,7 +87,7 @@
 
                 <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
 
-                <button type="button" name="button" class="updateBtn btn btn-warning pull-right" data-id={{_id}}>Update</button>
+                <button type="button" name="button" class="UpdateBtn btn btn-warning pull-right" data-id={{_id}}>Update</button>
 
             </p>
             {{/each}}
