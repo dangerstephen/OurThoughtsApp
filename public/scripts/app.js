@@ -29,9 +29,18 @@ $(document).ready(function() {
       });
     });
 
+$thoughtsList.on('click', '.updateBtn', function() {
+  console.log('clicked update button to', '/api/thoughts/'+$(this).attr('data-id'));
+  $.ajax({
+    method: 'PUT',
+    url: '/api/thoughts/'+$(this).attr('data-id'),
+    success: updateThoughtSuccess,
+    error: updateThoughtError
+  });
+});
+
       $thoughtsList.on('click', '.deleteBtn', function() {
         console.log('clicked delete button to', '/api/thoughts/'+$(this).attr('data-id'));
-
         $.ajax({
           method: 'DELETE',
           url: '/api/thoughts/'+$(this).attr('data-id'),
@@ -79,8 +88,9 @@ $(document).ready(function() {
 
     function deleteThoughtSuccess(json) {
         var thought = json;
-        console.log('this is the delete json', json);
+        console.log(json);
         var thoughtId = thought._id;
+        console.log('delete thought', thoughtId);
         // find the thought with the correct ID and remove it from our allThoughts array
         for (var index = 0; index < allThoughts.length; index++) {
             if (allThoughts[index]._id === thoughtId) {
@@ -89,10 +99,10 @@ $(document).ready(function() {
             }
         }
         render();
-  }
+    }
 
-    function deleteThoughtError(err) {
-        console.log('deleteThought error!', err);
+    function deleteThoughtError() {
+        console.log('deletethought error!');
     }
 
 

@@ -131,7 +131,7 @@ app.use('/', function(req, res, next) {
 
 
 //Routes for thoughts
-// get all thooughts
+// get all thoughts
 app.get('/api/thoughts', function(req, res) {
     // send all thoughts as JSON
     db.Thought.find(function(err, thoughts) {
