@@ -4,7 +4,15 @@ var template;
 var $thoughtsList;
 var allThoughts = [];
 
+function showDiv() {
+   document.getElementById('eachThought-edit').style.display = "block";
+}
+
 $(document).ready(function() {
+
+
+
+
     $thoughtsList = $('#thoughtTarget');
 
     //complie handlebars template
@@ -103,7 +111,7 @@ $thoughtsList.on('submit', '.form-edit-thought', function(event) {
 
 
     function updateThoughtSuccess(json) {
-  $('.form-edit-thought').hide();
+  $('.form-edit-thought');
   var thought = json;
   var thoughtId = thought._id;
   for (var i = 0; i < allThoughts.length; i++) {
