@@ -12,7 +12,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     session = require('express-session'),
-    client = require('twilio')(accountSid, authToken);
+    // client = require('twilio')(accountSid, authToken);
 
 
 // middleware
@@ -166,13 +166,13 @@ app.post('/api/thoughts', function(req, res) {
      newThought.save(function handleDBThoughtSaved(err, savedThought) {
         res.json(savedThought);
     });
-    client.messages.create({
-        to: "+18013585821",
-        from: "+14156662190",
-        body: "newThought",
-    }, function(err, message){
-        console.log(message.sid);
-    });
+    // client.messages.create({
+    //     to: "+18013585821",
+    //     from: "+14156662190",
+    //     body: "newThought",
+    // }, function(err, message){
+    //     console.log(message.sid);
+    // });
 
 });
 
