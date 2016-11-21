@@ -55,6 +55,8 @@ app.get('/', function(req, res) {
 // signup route (renders signup view)
 app.get('/signup', function(req, res) {
     res.render('signup');
+
+
 });
 
 // login route with placeholder response
@@ -76,6 +78,7 @@ app.post('/sessions', function(req, res) {
 
 //shows user profile page
 app.get('/profile', function(req, res) {
+  
     // find the user currently logged in
     User.findOne({
         _id: req.session.userId

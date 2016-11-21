@@ -54,7 +54,7 @@
                 <hr>
                 <form id="newThought-form">
                     <div class="form-group">
-                        <input type="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus>
+                        <input type="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus required> 
                     </div>
 
                     <div class="form-group">
@@ -85,11 +85,9 @@
                 <p>
                     <b>{{description}}</b> <br> Category: {{category}}
 
-                    <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
-                    <input  type="button"  name="button" class="btn btn-warning pull-right" data-id={{_id}} value="Delete" />
+                    <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
 
-                    <!-- <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}}>Update</button> -->
-                    <input  type="button"  name="button" class="btn btn-warning pull-right" data-id={{_id}} value="Update" onclick="showDiv()" />
+                    <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}} onclick="showDiv()">Update </button>
                 </p>
             </div>
             <div class="eachThought" id="eachThought-edit" style="display: none;">
