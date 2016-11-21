@@ -8,6 +8,10 @@ function showDiv() {
    document.getElementById('eachThought-edit').style.display = "block";
 }
 
+
+
+
+
 $(document).ready(function() {
 
 
