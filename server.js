@@ -78,7 +78,7 @@ app.post('/sessions', function(req, res) {
 
 //shows user profile page
 app.get('/profile', function(req, res) {
-  
+
     // find the user currently logged in
     User.findOne({
         _id: req.session.userId
@@ -196,6 +196,6 @@ app.delete('/api/thoughts/:id', function(req, res) {
 
 
 // listen on port 3000
-app.listen(3000, function() {
+app.listen(process.env.PORT, function() {
     console.log('server started on locahost:3000');
 });
