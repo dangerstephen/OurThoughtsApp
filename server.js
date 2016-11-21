@@ -4,8 +4,6 @@ var db = require('./models')
 // Twilio Credentials
 
 //REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
-var accountSid = 'ACa6d5cf695bdf4e4c62fbdbce99dac407';
-var authToken = '2c8e7a7731dbdee8ed561134d3e9303c';
 var twilloNumber = "+14156662190";
 var numberToText = "+18013585821";
 var message;
@@ -17,7 +15,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     session = require('express-session');
-    client = require('twilio')(accountSid, authToken);
+    // client = require('twilio')(accountSid, authToken);
 
 
 // middleware
@@ -37,27 +35,6 @@ app.use(session({
         maxAge: 30 * 60 * 1000
     } // 30 minute cookie lifespan (in milliseconds)
 }));
-
-
-//DATA
-// var thoughts= [
-//   {
-//     description: "youre great dont forget that"
-//     category: "happy"
-//   }, {
-//     description: "you need some major work."
-//     category: "sad"
-//   },
-//   {
-//     description: "im hungry"
-//     category: "weird"
-//   },
-//   {
-//     description: "knock knock"
-//     category: "funny"
-//   },
-//
-// ];
 
 
 
@@ -171,14 +148,14 @@ app.post('/api/thoughts', function(req, res) {
      newThought.save(function handleDBThoughtSaved(err, savedThought) {
         res.json(savedThought);
     });
-    client.messages.create({
-
-        to: "+18013585821",
-        from: "+14156662190",
-        body: "A new Message was added",
-    }, function(err, message){
-        console.log(message.sid);
-    });
+    // client.messages.create({
+    //
+    //     to: "+18013585821",
+    //     from: "+14156662190",
+    //     body: "A new Message was added",
+    // }, function(err, message){
+    //     console.log(message.sid);
+    // });
 
 });
 
