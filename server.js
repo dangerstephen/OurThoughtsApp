@@ -4,6 +4,11 @@ var db = require('./models')
 // Twilio Credentials
 
 //REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
+
+
+
+
+//attempting to try some things with api and if i can use variable inside it
 var twilloNumber = "+14156662190";
 var numberToText = "+18013585821";
 var message;
