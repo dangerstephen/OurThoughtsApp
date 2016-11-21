@@ -4,6 +4,8 @@ var db = require('./models')
 // Twilio Credentials
 
 //REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
+var accountSid = 'ACa6d5cf695bdf4e4c62fbdbce99dac407';
+var authToken = '2c8e7a7731dbdee8ed561134d3e9303c';
 
 // require express framework and additional modules
 var express = require('express'),
