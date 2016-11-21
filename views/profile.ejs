@@ -85,15 +85,14 @@
                 <p>
                     <b>{{description}}</b> <br> Category: {{category}}
 
-                    <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
-                    <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}}>
-                  <!-- <a href"#" onclick="document.GetElementById('eachThought-normal').style.display='none' documet.getElementById('eachThought-edit').style.display='inline'"> -->
-                    Update
-                  <!-- </a> -->
-                </button>
+                    <!-- <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button> -->
+                    <input  type="button"  name="button" class="btn btn-warning pull-right" data-id={{_id}} value="Delete" />
+
+                    <!-- <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}}>Update</button> -->
+                    <input  type="button"  name="button" class="btn btn-warning pull-right" data-id={{_id}} value="Update" onclick="showDiv()" />
                 </p>
             </div>
-            <div class="eachThought" id="eachThought-edit">
+            <div class="eachThought" id="eachThought-edit" style="display: none;">
 
 
                 <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
@@ -112,11 +111,7 @@
                        <option value="Random">Random</option>
                      </select> -->
 
-                    <button type="submit" class="saveBtn btn btn-default pull-right">
-                       <!-- <a href"#" onclick="document.GetElementById('eachThought-normal').style.display='inline' documet.getElementById('eachThought-edit').style.display='none'"> -->
-                         Save Edit
-                       <!-- </a> -->
-                     </button>
+                    <button type="submit" class="saveBtn btn btn-default pull-right">Save Edit</button>
                 </form>
             </div>
 
