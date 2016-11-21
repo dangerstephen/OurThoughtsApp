@@ -1,12 +1,18 @@
 // server.js
 var db = require('./models')
 
+// Twilio Credentials
+
+//REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
+
 // require express framework and additional modules
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    session = require('express-session');;
+    session = require('express-session'),
+    client = require('twilio')(accountSid, authToken);
+
 
 // middleware
 app.use(express.static('public'));
@@ -156,9 +162,17 @@ app.post('/api/thoughts', function(req, res) {
     // create new thought with form data (`req.body`)
     console.log('thoughts create', req.body);
     var newThought = new db.Thought(req.body);
-    newThought.save(function handleDBThoughtSaved(err, savedThought) {
+     newThought.save(function handleDBThoughtSaved(err, savedThought) {
         res.json(savedThought);
     });
+    client.messages.create({
+        to: "+18013585821",
+        from: "+14156662190",
+        body: "newThought",
+    }, function(err, message){
+        console.log(message.sid);
+    });
+
 });
 
 

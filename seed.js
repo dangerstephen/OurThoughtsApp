@@ -1,17 +1,17 @@
 var db = require('./models');
 
 var thoughts_list = [{
-        description: "youre great dont forget that",
-        category: "happy"
+        description: "You're Great :P and dont you forget it.",
+        category: "Happy"
     }, {
-        description: "you need some major work.",
-        category: "sad"
+        description: "You need some MAJOR work.",
+        category: "Sad"
     }, {
-        description: "im hungry",
-        category: "weird"
+        description: "I'm hungry",
+        category: "Weird"
     }, {
-        description: "knock knock",
-        category: "funny"
+        description: "Knock Knock",
+        category: "Funny"
     },
 
 ];
