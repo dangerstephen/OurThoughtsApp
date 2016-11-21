@@ -1,4 +1,4 @@
-console.log('yes i am connected');
+console.log('yes we are connected');
 
 var template;
 var $thoughtsList;
