@@ -80,6 +80,8 @@ $thoughtsList.on('click', '.updateBtn', function() {
         $('#newThought-form input').val('');
         allThoughts.push(json);
         render();
+
+
     }
 
     function newThoughtError() {
