@@ -4,7 +4,9 @@ var db = require('./models')
 // Twilio Credentials
 
 //REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
-
+var twilloNumber = "+14156662190";
+var numberToText = "+18013585821";
+var message;
 
 
 // require express framework and additional modules
@@ -12,7 +14,7 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    session = require('express-session'),
+    session = require('express-session');
     // client = require('twilio')(accountSid, authToken);
 
 
@@ -33,27 +35,6 @@ app.use(session({
         maxAge: 30 * 60 * 1000
     } // 30 minute cookie lifespan (in milliseconds)
 }));
-
-
-//DATA
-// var thoughts= [
-//   {
-//     description: "youre great dont forget that"
-//     category: "happy"
-//   }, {
-//     description: "you need some major work."
-//     category: "sad"
-//   },
-//   {
-//     description: "im hungry"
-//     category: "weird"
-//   },
-//   {
-//     description: "knock knock"
-//     category: "funny"
-//   },
-//
-// ];
 
 
 
@@ -105,7 +86,7 @@ app.get('/profile', function(req, res) {
 app.post('/users', function(req, res) {
     // use the email and password to authenticate here
     User.createSecure(req.body.email, req.body.password, req.body.phoneNumber, function(err, user) {
-        res.json(user);
+        res.redirect('/login');
     });
 });
 
@@ -168,13 +149,27 @@ app.post('/api/thoughts', function(req, res) {
         res.json(savedThought);
     });
     // client.messages.create({
+    //
     //     to: "+18013585821",
     //     from: "+14156662190",
-    //     body: "newThought",
+    //     body: "A new Message was added",
     // }, function(err, message){
     //     console.log(message.sid);
     // });
 
+});
+
+
+//attempting update
+app.put('/api/thoughts/:id', function (req, res) {
+  db.Thought.findOne({_id: req.params.id}, function (err, selectedThought) {
+    selectedThought.description = req.body.description,
+    selectedThought.category = req.body.category
+    selectedThought.save(function (err, savedUpdate) {
+      if (err) {return console.console.log(err);}
+      res.json(savedUpdate);
+    });
+  });
 });
 
 
