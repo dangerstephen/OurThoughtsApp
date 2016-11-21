@@ -24,15 +24,7 @@ li {
     padding: 0 80px;
 }
 
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 40px;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
+
 
 input {
     text-align: center;
@@ -68,7 +60,7 @@ div .row {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0px auto 0px auto;
-    border: 4px solid white;
+    border: 3px solid white;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.2);
     width: 550px;
@@ -76,15 +68,60 @@ div .row {
 }
 
 div .thought-row {
-  width: 650px;
-  height: 300px;
-  border: 4px solid white;
+  margin: 130px auto 40px auto;
+  width: 700px;
+  height: 350px;
+  border: 3px solid white;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.signup-row {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px auto 0px auto;
+  border: 3px solid white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 550px;
+  height: 500px;
+}
+
 .material-icons {
     float: left;
+}
+
+h3 {
+  padding-top: 15px;
+}
+
+
+.eachThought {
+  padding: 20px;
+  margin: 20px auto;
+  width: 1100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#thoughtTarget {
+  margin-bottom: 40px;
+}
+
+button {
+  margin: 8px;
+}
+
+.footer-container {
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
 
