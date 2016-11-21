@@ -6,6 +6,7 @@ var allThoughts = [];
 
 function showDiv() {
    document.getElementById('eachThought-edit').style.display = "block";
+
 }
 
 
@@ -121,7 +122,7 @@ $thoughtsList.on('submit', '.form-edit-thought', function(event) {
   for (var i = 0; i < allThoughts.length; i++) {
     if (allThoughts[i]._id === thoughtId) {
        allThoughts[i] = thought;
-       break;
+      //  break;
      }
    }
   render();

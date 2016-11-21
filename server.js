@@ -1,17 +1,15 @@
 // server.js
 var db = require('./models')
 
-// Twilio Credentials
 
-//REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
 
 
 
 
 //attempting to try some things with api and if i can use variable inside it
-var twilloNumber = "+14156662190";
-var numberToText = "+18013585821";
-var message;
+var twilloNumber = "'+14156662190'";
+var numberToText = "'+18013585821'";
+var myMessage;
 
 
 // require express framework and additional modules
@@ -21,6 +19,12 @@ var express = require('express'),
     mongoose = require('mongoose'),
     session = require('express-session');
     // client = require('twilio')(accountSid, authToken);
+
+
+
+
+
+
 
 
 // middleware
@@ -147,7 +151,6 @@ app.get('/api/thoughts/:id', function(req, res) {
         res.json(data);
     });
 });
-
 // create new thought
 app.post('/api/thoughts', function(req, res) {
     // create new thought with form data (`req.body`)
@@ -155,15 +158,18 @@ app.post('/api/thoughts', function(req, res) {
     var newThought = new db.Thought(req.body);
      newThought.save(function handleDBThoughtSaved(err, savedThought) {
         res.json(savedThought);
-    });
+         myMessage = "\""+ 'New Thought: ' + newThought.description+ ' Category: ' +newThought.category+"\"";
+
+
     // client.messages.create({
     //
-    //     to: "+18013585821",
-    //     from: "+14156662190",
-    //     body: "A new Message was added",
+    //     to: numberToText,
+    //     from: twilloNumber,
+    //     body: myMessage,
     // }, function(err, message){
     //     console.log(message.sid);
     // });
+    });
 
 });
 
