@@ -76,33 +76,33 @@
         </div>
 
     </div>
-    <div id="thoughtTarget" class="thoughtsList" >
+    <div id="thoughtTarget" class="thoughtsList">
         <!-- handlebar template -->
         <script id="thoughts-template" type="text/x-handlebars-template">
 
             {{#each thoughts}}
             <div class="eachThought" id="eachThought-normal">
-            <p>
-                <b>{{description}}</b> <br> Category: {{category}}
+                <p>
+                    <b>{{description}}</b> <br> Category: {{category}}
 
-                <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
-                <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}}>
+                    <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+                    <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}}>
                   <!-- <a href"#" onclick="document.GetElementById('eachThought-normal').style.display='none' documet.getElementById('eachThought-edit').style.display='inline'"> -->
                     Update
                   <!-- </a> -->
                 </button>
-            </p>
-          </div>
-          <div class="eachThought" id="eachThought-edit">
+                </p>
+            </div>
+            <div class="eachThought" id="eachThought-edit">
 
 
-            <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
-                     <label for="editDescription">description</label>
-                     <input type="text" class="form-control" name="description" value="{{description}}">
-                     <label for="editCategory">category</label>
-                     <input type="text" class="form-control" name="category" value="{{category}}">
+                <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
+                    <label for="editDescription">description</label>
+                    <input type="text" class="form-control" name="description" value="{{description}}">
+                    <label for="editCategory">category</label>
+                    <input type="text" class="form-control" name="category" value="{{category}}">
 
-                     <!-- <label for="categorySelect">Select Category</label>
+                    <!-- <label for="categorySelect">Select Category</label>
                      <select name="category-edit" class="form-control" id="categorySelect-edit">
                        <option value="Select">Choose One:</option>
                        <option value="Happy">Happy</option>
@@ -111,17 +111,18 @@
                        <option value="Funny">Funny</option>
                        <option value="Random">Random</option>
                      </select> -->
-                     
-                     <button type="submit" class="saveBtn btn btn-default pull-right">
+
+                    <button type="submit" class="saveBtn btn btn-default pull-right">
                        <!-- <a href"#" onclick="document.GetElementById('eachThought-normal').style.display='inline' documet.getElementById('eachThought-edit').style.display='none'"> -->
                          Save Edit
                        <!-- </a> -->
                      </button>
-                 </form>
+                </form>
             </div>
-              </div>
+
             {{/each}}
         </script>
+    </div>
     <footer class="footer-container">
         <div class="footer-text">
             Created By <a href="https://www.linkedin.com/in/myungok-starkim" target="_blank">Star</a> & <a href="https://www.linkedin.com/in/stephen-dangerfield-a46372128" target="_blank">Stephen</a>
