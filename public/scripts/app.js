@@ -29,15 +29,23 @@ $(document).ready(function() {
       });
     });
 
-$thoughtsList.on('click', '.updateBtn', function() {
-  console.log('clicked update button to', '/api/thoughts/'+$(this).attr('data-id'));
-  $.ajax({
-    method: 'PUT',
-    url: '/api/thoughts/'+$(this).attr('data-id'),
-    success: updateThoughtSuccess,
-    error: updateThoughtError
+
+
+//attempting update
+
+$thoughtsList.on('submit', '.form-edit-thought', function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: 'PUT',
+      url: '/api/thoughts/'+$(this).attr('data-id'),
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: updateThoughtSuccess,
+      error: updateThoughtError
+    });
   });
-});
+
+  //delte item
 
       $thoughtsList.on('click', '.deleteBtn', function() {
         console.log('clicked delete button to', '/api/thoughts/'+$(this).attr('data-id'));
@@ -87,6 +95,31 @@ $thoughtsList.on('click', '.updateBtn', function() {
     function newThoughtError() {
         console.log('newthought error!');
     }
+
+
+//attempting to update
+
+
+
+
+    function updateThoughtSuccess(json) {
+  $('.form-edit-thought').hide();
+  var thought = json;
+  var thoughtId = thought._id;
+  for (var i = 0; i < allThoughts.length; i++) {
+    if (allThoughts[i]._id === thoughtId) {
+       allThoughts[i] = thought;
+       break;
+     }
+   }
+  render();
+};
+
+function updateThoughtError(){
+  console.log("i am the updte err");
+}
+
+
 
     function deleteThoughtSuccess(json) {
         var thought = json;

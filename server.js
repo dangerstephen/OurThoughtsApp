@@ -4,7 +4,11 @@ var db = require('./models')
 // Twilio Credentials
 
 //REMEMEBR TO PASTE IN THE AUTH CODE AND API KEY WHEN WORKING LOCALLY
-
+var accountSid = 'ACa6d5cf695bdf4e4c62fbdbce99dac407';
+var authToken = '2c8e7a7731dbdee8ed561134d3e9303c';
+var twilloNumber = "+14156662190";
+var numberToText = "+18013585821";
+var message;
 
 
 // require express framework and additional modules
@@ -12,8 +16,8 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    session = require('express-session'),
-    // client = require('twilio')(accountSid, authToken);
+    session = require('express-session');
+    client = require('twilio')(accountSid, authToken);
 
 
 // middleware
@@ -105,7 +109,7 @@ app.get('/profile', function(req, res) {
 app.post('/users', function(req, res) {
     // use the email and password to authenticate here
     User.createSecure(req.body.email, req.body.password, req.body.phoneNumber, function(err, user) {
-        res.json(user);
+        res.redirect('/login');
     });
 });
 
@@ -167,14 +171,28 @@ app.post('/api/thoughts', function(req, res) {
      newThought.save(function handleDBThoughtSaved(err, savedThought) {
         res.json(savedThought);
     });
-    // client.messages.create({
-    //     to: "+18013585821",
-    //     from: "+14156662190",
-    //     body: "newThought",
-    // }, function(err, message){
-    //     console.log(message.sid);
-    // });
+    client.messages.create({
 
+        to: "+18013585821",
+        from: "+14156662190",
+        body: "A new Message was added",
+    }, function(err, message){
+        console.log(message.sid);
+    });
+
+});
+
+
+//attempting update
+app.put('/api/thoughts/:id', function (req, res) {
+  db.Thought.findOne({_id: req.params.id}, function (err, selectedThought) {
+    selectedThought.description = req.body.description,
+    selectedThought.category = req.body.category
+    selectedThought.save(function (err, savedUpdate) {
+      if (err) {return console.console.log(err);}
+      res.json(savedUpdate);
+    });
+  });
 });
 
 
