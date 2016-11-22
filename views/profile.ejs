@@ -80,11 +80,11 @@
                     <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}} onclick="showDiv()">Update </button>
                 </p>
             </div>
-            <div class="eachThought" id="eachThought-edit" style="display: none">
+            <div class="eachThought" id="eachThought-edit" style="display: unhidden">
                 <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
-                    <label for="editDescription">description</label>
+                    <label for="editDescription">Description</label>
                     <input type="text" class="form-control" name="description" value="{{description}}">
-                    <label for="editCategory">category</label>
+                    <label for="editCategory">Category</label>
                     <input type="text" class="form-control" name="category" value="{{category}}">
 
                     <button type="submit" class="saveBtn btn btn-default pull-right">Save Edit</button>
