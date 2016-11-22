@@ -21,10 +21,15 @@ A full stack application that allows users to input thoughts as well as receive 
 #Database Models/ERD
 ![slack for ios upload null](https://cloud.githubusercontent.com/assets/22550925/20507813/1c02986c-b012-11e6-9687-edea47045fbe.jpeg)
 
+
+
  #Planning and Execution:
  
- As we worked we worked on the project we used Trello to set things we needed to do and track when they were done. This helped us know what the next step was along the whole procces and to insure that we got all the things we origianlly planned to done. 
- https://trello.com/b/0IcVo5BL/project-1
+As we worked we worked on the project we used ([Trello](https://trello.com/b/0IcVo5BL/project-1)) to set things we needed to do and track when they were done. This helped us know what the next step was along the whole procces and to insure that we got all the things we origianlly planned to done. 
+
+
+ 
+ 
  
  
  #By Stephen Dangerfield & Star Kim
