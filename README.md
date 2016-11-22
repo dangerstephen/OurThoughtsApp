@@ -1,5 +1,5 @@
 
-#OurThoughts
+# Project 1--Our Thoughts App
 
 
 ###Description
