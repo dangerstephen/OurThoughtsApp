@@ -202,6 +202,6 @@ app.delete('/api/thoughts/:id', function(req, res) {
 
 
 // listen on port 3000
-app.listen(process.env.PORT, function() {
+app.listen(3000, function() {
     console.log('server started on locahost:3000');
 });
