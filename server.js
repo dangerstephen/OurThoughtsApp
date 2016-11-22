@@ -1,10 +1,7 @@
 // server.js
 var db = require('./models')
-
-
-
-
-
+var accountSid = 'ACa6d5cf695bdf4e4c62fbdbce99dac407';
+var authToken = '2c8e7a7731dbdee8ed561134d3e9303c';
 
 //attempting to try some things with api and if i can use variable inside it
 var twilloNumber = "'+14156662190'";
@@ -17,15 +14,8 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    session = require('express-session');
-    // client = require('twilio')(accountSid, authToken);
-
-
-
-
-
-
-
+    session = require('express-session'),
+    client = require('twilio')(accountSid, authToken);
 
 // middleware
 app.use(express.static('public'));
@@ -44,10 +34,6 @@ app.use(session({
         maxAge: 30 * 60 * 1000
     } // 30 minute cookie lifespan (in milliseconds)
 }));
-
-
-
-
 
 var User = require('./models/user');
 
@@ -161,14 +147,14 @@ app.post('/api/thoughts', function(req, res) {
          myMessage = "\""+ 'New Thought: ' + newThought.description+ ' Category: ' +newThought.category+"\"";
 
 
-    // client.messages.create({
-    //
-    //     to: numberToText,
-    //     from: twilloNumber,
-    //     body: myMessage,
-    // }, function(err, message){
-    //     console.log(message.sid);
-    // });
+    client.messages.create({
+
+        to: numberToText,
+        from: twilloNumber,
+        body: myMessage,
+    }, function(err, message){
+        console.log(message.sid);
+    });
     });
 
 });
@@ -202,6 +188,6 @@ app.delete('/api/thoughts/:id', function(req, res) {
 
 
 // listen on port 3000
-app.listen(3000, function() {
-    console.log('server started on locahost:3000');
+app.listen(process.env.PORT, function() {
+    console.log('server started on localhost:3000');
 });

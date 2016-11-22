@@ -69,7 +69,6 @@
     <div id="thoughtTarget" class="thoughtsList">
         <!-- handlebar template -->
         <script id="thoughts-template" type="text/x-handlebars-template">
-
             {{#each thoughts}}
             <div class="eachThought" id="eachThought-normal">
                 <p>
@@ -80,7 +79,7 @@
                     <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}} onclick="showDiv()">Update </button>
                 </p>
             </div>
-            <div class="eachThought" id="eachThought-edit" style="display: hide">
+            <div class="eachThought" id="eachThought-edit" style="display: unhidden">
                 <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
                     <label for="editDescription">Description</label>
                     <input type="text" class="form-control" name="description" value="{{description}}">
