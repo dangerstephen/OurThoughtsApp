@@ -12,8 +12,6 @@ var UserSchema = new Schema({
   phoneNumber: String
 });
 
-
-
 // create a new user with secure (hashed) password
 UserSchema.statics.createSecure = function (email, password, phoneNumber, callback) {
 // `this` references our user model, since this function will be called from the model itself
