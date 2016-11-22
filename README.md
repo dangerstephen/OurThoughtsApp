@@ -4,6 +4,7 @@
 
 #Description
 A full stack application that allows users to input thoughts as well as receive them via text message using the Twillo Api. 
+You can find the site deployed live on ([heroku](http://ourthoughtsapp.herokuapp.com/)) 
 
 #Homepage:
 
