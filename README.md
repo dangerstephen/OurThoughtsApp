@@ -1,10 +1,10 @@
 
-# Project 1--Our Thoughts App
+# Project 1 - Our Thoughts App
 
 
 ###Description
-A full stack application that allows users to input thoughts as well as receive them via text message using the Twillo Api. 
-You can find the site deployed live on ([heroku](http://ourthoughtsapp.herokuapp.com/)) 
+A full stack application that allows users to input thoughts as well as receive them via text message using the Twillo API. 
+Our project can be viewed on ([heroku](http://ourthoughtsapp.herokuapp.com/)). 
 
 ###Homepage:
 
@@ -26,7 +26,7 @@ You can find the site deployed live on ([heroku](http://ourthoughtsapp.herokuapp
 
 ##Planning and Execution:
  
-As we worked we worked on the project we used ([Trello](https://trello.com/b/0IcVo5BL/project-1)) to set things we needed to do and track when they were done. This helped us know what the next step was along the whole procces and to insure that we got all the things we origianlly planned to done. 
+We used ([Trello](https://trello.com/b/0IcVo5BL/project-1)) to organize our workflow and prioritize our goals. It helped us keep track of our to do list and ensure that we completed all the action items that we originally planned to execute. 
 
 
  
