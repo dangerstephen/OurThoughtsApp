@@ -7,7 +7,18 @@ function showDiv() {
    document.getElementById('eachThought-edit').style.display = "block";
 
 }
+
 $(document).ready(function() {
+
+  // $(".btn").click(function(){
+  //       $("#eachThought-edit").show();
+  //   });
+  //   $(".saveBtn").click(function(){
+  //       $("#eachThought-edit").hide();
+  //   });
+
+
+
     $thoughtsList = $('#thoughtTarget');
 
     var source = $('#thoughts-template').html();
@@ -119,6 +130,8 @@ function updateThoughtError(){
     function deleteThoughtError() {
         console.log('deletethought error!');
     }
+
+
 
     //end document.ready
 });
