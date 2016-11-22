@@ -25,6 +25,9 @@ input {
     display: inline;
 }
 
+h4 {
+  margin-top: 24px;
+}
 
 /* These make it so the input form text is white for all browsers*/
 
@@ -128,12 +131,14 @@ button {
     width: 100%;
     text-align: center;
     color: white;
+    margin: 10px auto;
 }
 
 .profile-footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: auto;
     text-align: center;
+    margin: 10px auto;
 }
