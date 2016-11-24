@@ -1,7 +1,5 @@
 // server.js
 var db = require('./models')
-var accountSid = 'ACa6d5cf695bdf4e4c62fbdbce99dac407';
-var authToken = '2c8e7a7731dbdee8ed561134d3e9303c';
 
 //attempting to try some things with api and if i can use variable inside it
 var twilloNumber = "'+14156662190'";
@@ -14,8 +12,8 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
-    session = require('express-session'),
-    client = require('twilio')(accountSid, authToken);
+    session = require('express-session');
+    // client = require('twilio')(accountSid, authToken);
 
 // middleware
 app.use(express.static('public'));
