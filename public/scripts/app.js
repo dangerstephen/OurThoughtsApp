@@ -10,15 +10,6 @@ function showDiv() {
 
 $(document).ready(function() {
 
-  // $(".btn").click(function(){
-  //       $("#eachThought-edit").show();
-  //   });
-  //   $(".saveBtn").click(function(){
-  //       $("#eachThought-edit").hide();
-  //   });
-
-
-
     $thoughtsList = $('#thoughtTarget');
 
     var source = $('#thoughts-template').html();
@@ -88,8 +79,6 @@ $thoughtsList.on('submit', '.form-edit-thought', function(event) {
         $('#newThought-form input').val('');
         allThoughts.push(json);
         render();
-
-
     }
 
     function newThoughtError() {
@@ -131,7 +120,4 @@ function updateThoughtError(){
         console.log('deletethought error!');
     }
 
-
-
-    //end document.ready
 });
