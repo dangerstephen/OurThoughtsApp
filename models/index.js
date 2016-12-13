@@ -1,4 +1,4 @@
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/simple-login');
+mongoose.connect('mongodb://localhost/ourThoughts-app');
 
 module.exports.Thought = require("./thought.js");
