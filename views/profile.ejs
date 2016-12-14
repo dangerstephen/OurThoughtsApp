@@ -4,29 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Thoughts App</title>
-
+<title>Our Thoughts App</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 <link rel="stylesheet" href="./styles/main.css">
-
 <!-- Google font -->
-<link href="https://fonts.googleapis.com/css?family=Londrina+Outline|Roboto" rel="stylesheet">
-<!-- Materalize CDN's -->
-<!-- Compiled and minified JavaScript -->
-
-
-
-<!-- VENDOR SCRIPTS -->
-
+<link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet">
 <!--JQuery CDN  -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- Handlebars CDN -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
 <!-- APPLICATION SCRIPTS -->
 <script src="./scripts/app.js"></script>
 
@@ -36,7 +26,7 @@
 
     <nav class="N/A transparent z-depth-0">
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><h3><b>Our Thoughts</b></h3></a>
+            <a href="/" class="brand-logo"><h4><b>Our Thoughts</b></h4></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>Welcome!
                     <%= user.email %>
@@ -50,11 +40,11 @@
     <div class="container text-center">
         <div class="thought-row">
             <div class="col-md-8 col-md-offset-2">
-                <h3>Add a new thought</h3>
+                <h3>Add a new thought!</h3>
                 <hr>
                 <form id="newThought-form">
                     <div class="form-group">
-                        <input type="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus required> 
+                        <input type="messeage" name="description" class="form-control" placeholder="Your Thought Here" autofocus required>
                     </div>
 
                     <div class="form-group">
@@ -90,24 +80,12 @@
                     <button type="button" name="button" class="btn btn-warning pull-right" data-id={{_id}} onclick="showDiv()">Update </button>
                 </p>
             </div>
-            <div class="eachThought" id="eachThought-edit" style="display: none;">
-
-
+            <div class="eachThought" id="eachThought-edit" style="display: hide">
                 <form class="form-inline form-edit-thought" id="thoughtForm{{_id}}" data-id={{_id}}>
-                    <label for="editDescription">description</label>
+                    <label for="editDescription">Description</label>
                     <input type="text" class="form-control" name="description" value="{{description}}">
-                    <label for="editCategory">category</label>
+                    <label for="editCategory">Category</label>
                     <input type="text" class="form-control" name="category" value="{{category}}">
-
-                    <!-- <label for="categorySelect">Select Category</label>
-                     <select name="category-edit" class="form-control" id="categorySelect-edit">
-                       <option value="Select">Choose One:</option>
-                       <option value="Happy">Happy</option>
-                       <option value="Weird">Weird</option>
-                       <option value="Sad">Sad</option>
-                       <option value="Funny">Funny</option>
-                       <option value="Random">Random</option>
-                     </select> -->
 
                     <button type="submit" class="saveBtn btn btn-default pull-right">Save Edit</button>
                 </form>
@@ -116,13 +94,13 @@
             {{/each}}
         </script>
     </div>
-    <footer class="footer-container">
+    <footer class="profile-footer">
         <div class="footer-text">
             Created By <a href="https://www.linkedin.com/in/myungok-starkim" target="_blank">Star</a> & <a href="https://www.linkedin.com/in/stephen-dangerfield-a46372128" target="_blank">Stephen</a>
         </div>
     </footer>
 
-    <!--  Scripts-->
+    <!-- materialize Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 </body>

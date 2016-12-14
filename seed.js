@@ -1,23 +1,23 @@
 var db = require('./models');
 
-var thoughts_list = [{
+var thoughts_list = [];
+thoughts_list.push({
         description: "You're Great :P and dont you forget it.",
         category: "Happy"
-    }, {
+    });
+    thoughts_list.push({
         description: "You need some MAJOR work.",
         category: "Sad"
-    }, {
+    });
+     thoughts_list.push({
         description: "I'm hungry",
         category: "Weird"
-    }, {
+    });
+    thoughts_list.push({
         description: "Knock Knock",
         category: "Funny"
-    },
+    });
 
-];
-
-
-// remove all records that match {} -- which means remove ALL records
 db.Thought.remove({}, function(err, thoughts) {
     if (err) {
         console.log('Error occurred in remove', err);
